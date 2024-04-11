@@ -1,0 +1,141 @@
+/* Basic CSS for Form Styling */
+:root {
+    --primary-color: #e91e7f; /* Define your primary color */
+    --secondary-color: blue; /* Define your secondary color */
+    --background-color: #f9f9f9; /* Define your background color */
+    --border-color: #ccc; /* Define your border color */
+}
+
+/* Basic CSS for Form Styling */
+#custom-design-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color); /* Use custom background color variable */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"],
+button[type="button"] {
+    background-color: var(--primary-color); /* Use custom primary color variable */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: var(--secondary-color); /* Use custom secondary color variable */
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select,
+input[type="file"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color); /* Use custom border color variable */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    height: 40px; /* Adjust height as needed */
+}
+
+button[type="submit"],
+button[type="button"] {
+    background-color: #e91e7f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #;
+}
+
+.product-field {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.product-field label {
+    display: inline-block;
+    width: 120px;
+    font-weight: normal;
+}
+
+.product-field input[type="file"],
+.product-field input[type="text"],
+.product-field input[type="number"] {
+    width: calc(100% - 140px);
+    margin-right: 20px;
+}
+
+.remove-product {
+    display: flex;
+  padding: 8px 32px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  background: #e91e7f;
+  color: white;
+  cursor: pointer;
+}
+
+.remove-product:hover {
+    background-color:#e91e7f ;
+}
+
+
+
+.scrollcon {
+    max-width: 20vh; /* Set the maximum height of the container to 60% of the viewport height */
+    overflow-x: scroll;/* Prevent horizontal scrolling */
+    overflow-y: hidden;/* Enable vertical scrolling within the container when content exceeds its height */
+    border: 1px solid #ccc; /* Border style for the container */
+    border-radius: 10px; /* Applies a border-radius to the scrollbar track */
+  }
+  
+  .scrollcon::-webkit-scrollbar {
+    width: 14px;/* Sets the width of the scrollbar */
+  }
+  
+  .scrollcon::-webkit-scrollbar-track {
+    background: BLACK; /* Sets the background color of the scrollbar track */
+    border-radius: 10px; /* Applies a border-radius to the scrollbar track */
+  }
+  
+  .scrollcon::-webkit-scrollbar-thumb {
+    background: blue; /* Sets the background color of the scrollbar thumb */
+    border-radius: 10px; /* Applies a border-radius to the scrollbar thumb */
+  }
+
+  .it{width: 50%;}
+  .viewbtn{width: 5%;}
+  
+
+/* Style for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+  }

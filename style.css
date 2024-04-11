@@ -52,8 +52,6 @@ form {
 .info-feild {
   width: 50%;
   box-sizing: border-box;
-  
-  
 }
 .if-head {
   align-self: stretch;
@@ -65,7 +63,6 @@ form {
   font-style: normal;
   font-weight: 400;
   line-height: 27px; /* 150% */
-  
 }
 .if-head span {
   color: #e91e7f;
@@ -137,3 +134,29 @@ form {
     width: 100%;
   }
 }
+
+/* add product styling starts here */
+.product-detail-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+}
+
+.addbtnwrapper{
+    width: 100%;
+    /* background-color: #01e29c; */
+    margin-top: -20px;
+}
+#add-product {
+  display: flex;
+  padding: 8px 32px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  background: #e91e7f;
+}
+/* add product styling ends here */
