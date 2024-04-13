@@ -70,6 +70,13 @@
 
         <!-- add product start here -->
       </div>
+
+      <!-- description layout start here  -->
+      <p class="desciption-head">Description <span>*</span></p>
+      <textarea name="description" id="descriptionbox" cols="30" rows="7" placeholder="Describe about product" ></textarea>
+      <!-- description layout end here  -->
+      <!-- submit button here -->
+      <button class="submitbtn">Submit</button>
     </form>
   </body>
 
