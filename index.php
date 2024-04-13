@@ -17,7 +17,7 @@
         </div>
         <div class="info-feild">
           <p class="if-head">Email <span>*</span></p>
-          <input type="text" />
+          <input type="email"  />
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
@@ -25,20 +25,20 @@
         </div>
         <div class="info-feild">
           <p class="if-head">Phone <span>*</span></p>
-          <input type="text" />
+          <input type="text" id="phone_number" maxlength="15">
+
         </div>
      
        
         <div class="info-feild">
           <p class="if-head">Type of Design <span>*</span></p>
           <div class="search-wrapper">
-            <input type="text">
-            <div class="search-results">
+            <input type="text" value="ibad" id="D_typeInput">
+            <div class="search-results" id="D_type">
               <!-- search query php -->
-              <p>hoodie</p>
-              <p>Mug</p>
-              <p>T-shirts</p>
-              <p>Clock</p>
+              <p>Typography</p>
+              <p>Image based Desgin</p>
+              <p>Typo + Image</p>
             </div>
           </div>
         </div>
@@ -136,5 +136,41 @@
         }
       });
     });
+  </script>
+  <script>
+    var inputFeild = document.getElementById("D_typeInput");
+    var typeResults = document.getElementById("D_type");
+    var searchOptions = document.querySelectorAll("#D_type p");
+    var phoneNumberInput = document.getElementById("phone_number");
+
+    phoneNumberInput.addEventListener("input", function(){
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+
+
+
+    inputFeild.addEventListener("focus", function () {
+      typeResults.style.display = "inline-block";
+
+    });
+
+    searchOptions.forEach(function(option){
+      option.addEventListener("click", function(){
+        inputFeild.value = this.textContent;
+        typeResults.style.display = "none";
+      })
+    })
+
+
+
+    document.addEventListener("click", function(event){
+
+      if(!inputFeild.contains(event.target) && !typeResults.contains(event.target)) {
+        typeResults.style.display = "none";
+      }
+
+    })
+
   </script>
 </html>

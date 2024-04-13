@@ -85,6 +85,9 @@ form {
   border: none;
   border-radius: 6px;
 }
+.info-feild input:focus{
+  outline: none;
+}
 /* select feild styling */
 /* search feild */
 .search-wrapper {
@@ -106,6 +109,7 @@ form {
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
+  display: none;
 }
 .search-results p {
   color: #332051;
@@ -118,16 +122,15 @@ form {
   line-height: normal;
   width: 100%;
   display: flex;
-padding: 6px 8px;
-align-items: flex-start;
-gap: 10px;
-align-self: stretch;
+  padding: 6px 8px;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
 }
-.search-results p:hover{
+.search-results p:hover {
   border-radius: 6px;
-background: #A65EFC;
-color: white;
-
+  background: #a65efc;
+  color: white;
 }
 /* file uploader */
 .filewrapper {
@@ -174,6 +177,9 @@ color: white;
   }
   .info-feild {
     width: 100%;
+  }
+  .search-results p {
+    width: 45% !important;
   }
 }
 
