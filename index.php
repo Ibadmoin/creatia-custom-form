@@ -35,24 +35,34 @@
           <div class="search-wrapper">
             <input type="text" value="" placeholder="Select Product Type" id="D_typeInput">
               <img src="./assets/down.svg" id="dropdownToggle"  class="arrow-icon" alt="">
+              <div class="search-results" id="D_type">
+                <p>Typography</p>
+                <p>Image based Design</p>
+                <p>Text plus Image</p>
+
+              </div>
             
             
-            <div class="search-results" id="D_type">
-              <!-- search query php -->
-              <p>Typography</p>
-              <p>Image based Design</p>
-              <p>Typo + Image</p>
-            </div>
+            
           </div>
         </div>
 
         <div class="info-feild">
-          <p class="if-head">File Upload <span>*</span></p>
+          <p class="if-head">File Upload (Optional)</p>
           <div class="filewrapper">
+            <div class="fileinnerwrapper">
             <input type="file" id="file-upload" name="file-upload" />
             <label for="file-upload" class="custom-file-upload"
-              >Choose File</label
+              >
+              <div class="importwrapper">
+              <img src="./assets/plus.svg" class="importFile" alt="">
+              </div>
+              </label
             >
+            <div class="importwrapper">
+              p
+            </div>
+            </div>
             <p>Max file Size: 2gb</p>
           </div>
         </div>
@@ -177,16 +187,24 @@
 });
 
 
+
+
 // Attach click event listener to input field to handle opening and closing the dropdown
 inputFeild.addEventListener("click", function() {
   if (typeResults.style.display === "none" || typeResults.style.display === "") {
     typeResults.style.display = "inline-block";
-    dropdownToggle.src = "./assets/up.svg"; // Change the arrow to up when opening
-  } else {
+    dropdownToggle.src = "./assets/up.svg";
+    
+      } else {
     typeResults.style.display = "none";
     dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
   }
 });
+
+inputFeild.addEventListener("keydown",function(e){
+  e.preventDefault();
+  
+})
     
 
     searchOptions.forEach(function(option){
@@ -196,6 +214,8 @@ inputFeild.addEventListener("click", function() {
         dropdownToggle.src = "./assets/down.svg"
       })
     });
+    
+
 
   
   
