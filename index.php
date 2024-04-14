@@ -33,14 +33,14 @@
         <div class="info-feild">
           <p class="if-head">Type of Design <span>*</span></p>
           <div class="search-wrapper">
-            <input type="text" value="ibad" id="D_typeInput">
+            <input type="text" value="" placeholder="Select Product Type" id="D_typeInput">
               <img src="./assets/down.svg" id="dropdownToggle"  class="arrow-icon" alt="">
             
             
             <div class="search-results" id="D_type">
               <!-- search query php -->
               <p>Typography</p>
-              <p>Image based Desgin</p>
+              <p>Image based Design</p>
               <p>Typo + Image</p>
             </div>
           </div>
