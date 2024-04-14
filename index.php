@@ -34,6 +34,9 @@
           <p class="if-head">Type of Design <span>*</span></p>
           <div class="search-wrapper">
             <input type="text" value="ibad" id="D_typeInput">
+              <img src="./assets/down.svg" id="dropdownToggle"  class="arrow-icon" alt="">
+            
+            
             <div class="search-results" id="D_type">
               <!-- search query php -->
               <p>Typography</p>
@@ -148,6 +151,9 @@
     var inputFeild = document.getElementById("D_typeInput");
     var typeResults = document.getElementById("D_type");
     var searchOptions = document.querySelectorAll("#D_type p");
+    var dropdownToggle = document.getElementById("dropdownToggle");
+
+    
     var phoneNumberInput = document.getElementById("phone_number");
 
     phoneNumberInput.addEventListener("input", function(){
@@ -157,27 +163,52 @@
 
 
 
-    inputFeild.addEventListener("focus", function () {
-      typeResults.style.display = "inline-block";
 
-    });
+    dropdownToggle.addEventListener("click", function(event) {
+  if (typeResults.style.display === "none" || typeResults.style.display === "") {
+    typeResults.style.display = "inline-block";
+    dropdownToggle.src = "./assets/up.svg";
+    console.log("cliekd"); // Change the arrow to up when opening
+  } else {
+    typeResults.style.display = "none";
+    dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+  }
+  event.stopPropagation(); // Stop the click event from propagating to the document
+});
+
+
+// Attach click event listener to input field to handle opening and closing the dropdown
+inputFeild.addEventListener("click", function() {
+  if (typeResults.style.display === "none" || typeResults.style.display === "") {
+    typeResults.style.display = "inline-block";
+    dropdownToggle.src = "./assets/up.svg"; // Change the arrow to up when opening
+  } else {
+    typeResults.style.display = "none";
+    dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+  }
+});
+    
 
     searchOptions.forEach(function(option){
       option.addEventListener("click", function(){
         inputFeild.value = this.textContent;
         typeResults.style.display = "none";
+        dropdownToggle.src = "./assets/down.svg"
       })
-    })
+    });
 
-
-
-    document.addEventListener("click", function(event){
-
-      if(!inputFeild.contains(event.target) && !typeResults.contains(event.target)) {
-        typeResults.style.display = "none";
+  
+  
+  document.addEventListener("click", function(event){
+    
+    if(!inputFeild.contains(event.target) && !typeResults.contains(event.target)) {
+      typeResults.style.display = "none";
+      dropdownToggle.src = "./assets/down.svg"
       }
 
-    })
+    });
+
+    
 
   </script>
 </html>
