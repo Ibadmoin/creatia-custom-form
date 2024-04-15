@@ -197,6 +197,28 @@ form {
   width: 24px;
   height: 24px;
 }
+.previewContainer{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preview-file{
+  /* background-color: #01e29c; */
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 6px;
+  background: #fcfaff;
+  
+
+}
+.preview-file img {
+  width:85px;
+  height: 85px;
+  max-width: 100%;
+}
 .filewrapper p {
   color: #332051;
 

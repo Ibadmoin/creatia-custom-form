@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="design.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="./formfunctions.js"></script>
   </head>
   <body>
     <form action="post">
@@ -17,7 +18,7 @@
         </div>
         <div class="info-feild">
           <p class="if-head">Email <span>*</span></p>
-          <input type="email"  />
+          <input type="email" />
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
@@ -25,25 +26,29 @@
         </div>
         <div class="info-feild">
           <p class="if-head">Phone <span>*</span></p>
-          <input type="text" id="phone_number" maxlength="15">
-
+          <input type="text" id="phone_number" maxlength="15" />
         </div>
-     
-       
+
         <div class="info-feild">
           <p class="if-head">Type of Design <span>*</span></p>
           <div class="search-wrapper">
-            <input type="text" value="" placeholder="Select Product Type" id="D_typeInput">
-              <img src="./assets/down.svg" id="dropdownToggle"  class="arrow-icon" alt="">
-              <div class="search-results" id="D_type">
-                <p>Typography</p>
-                <p>Image based Design</p>
-                <p>Text plus Image</p>
-
-              </div>
-            
-            
-            
+            <input
+              type="text"
+              value=""
+              placeholder="Select Product Type"
+              id="D_typeInput"
+            />
+            <img
+              src="./assets/down.svg"
+              id="dropdownToggle"
+              class="arrow-icon"
+              alt=""
+            />
+            <div class="search-results" id="D_type">
+              <p>Typography</p>
+              <p>Image based Design</p>
+              <p>Text plus Image</p>
+            </div>
           </div>
         </div>
 
@@ -51,17 +56,20 @@
           <p class="if-head">File Upload (Optional)</p>
           <div class="filewrapper">
             <div class="fileinnerwrapper">
-            <input type="file" id="file-upload" name="file-upload" />
-            <label for="file-upload" class="custom-file-upload"
-              >
-              <div class="importwrapper">
-              <img src="./assets/plus.svg" class="importFile" alt="">
+              <input type="file" id="file-upload" name="file-upload" multiple="multiple" />
+              <label for="file-upload" class="custom-file-upload" >
+                <div class="importwrapper">
+                  <img src="./assets/plus.svg" class="importFile" alt="" />
+                </div>
+              </label>
+              <div class="previewContainer" id="preContainer">
+                <!-- rendering through js -->
+              <!-- <div class="preview-file">
+                
+              </div> -->
+              
               </div>
-              </label
-            >
-            <div class="importwrapper">
-              p
-            </div>
+              
             </div>
             <p>Max file Size: 2gb</p>
           </div>
@@ -86,7 +94,13 @@
 
       <!-- description layout start here  -->
       <p class="desciption-head">Description <span>*</span></p>
-      <textarea name="description" id="descriptionbox" cols="30" rows="7" placeholder="Describe about product" ></textarea>
+      <textarea
+        name="description"
+        id="descriptionbox"
+        cols="30"
+        rows="7"
+        placeholder="Describe about product"
+      ></textarea>
       <!-- description layout end here  -->
       <!-- submit button here -->
       <button class="submitbtn">Submit</button>
@@ -157,78 +171,5 @@
       });
     });
   </script>
-  <script>
-    var inputFeild = document.getElementById("D_typeInput");
-    var typeResults = document.getElementById("D_type");
-    var searchOptions = document.querySelectorAll("#D_type p");
-    var dropdownToggle = document.getElementById("dropdownToggle");
-
-    
-    var phoneNumberInput = document.getElementById("phone_number");
-
-    phoneNumberInput.addEventListener("input", function(){
-      this.value = this.value.replace(/[^0-9]/g, '');
-    });
-
-
-
-
-
-    dropdownToggle.addEventListener("click", function(event) {
-  if (typeResults.style.display === "none" || typeResults.style.display === "") {
-    typeResults.style.display = "inline-block";
-    dropdownToggle.src = "./assets/up.svg";
-    console.log("cliekd"); // Change the arrow to up when opening
-  } else {
-    typeResults.style.display = "none";
-    dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-  }
-  event.stopPropagation(); // Stop the click event from propagating to the document
-});
-
-
-
-
-// Attach click event listener to input field to handle opening and closing the dropdown
-inputFeild.addEventListener("click", function() {
-  if (typeResults.style.display === "none" || typeResults.style.display === "") {
-    typeResults.style.display = "inline-block";
-    dropdownToggle.src = "./assets/up.svg";
-    
-      } else {
-    typeResults.style.display = "none";
-    dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-  }
-});
-
-inputFeild.addEventListener("keydown",function(e){
-  e.preventDefault();
-  
-})
-    
-
-    searchOptions.forEach(function(option){
-      option.addEventListener("click", function(){
-        inputFeild.value = this.textContent;
-        typeResults.style.display = "none";
-        dropdownToggle.src = "./assets/down.svg"
-      })
-    });
-    
-
-
-  
-  
-  document.addEventListener("click", function(event){
-    
-    if(!inputFeild.contains(event.target) && !typeResults.contains(event.target)) {
-      typeResults.style.display = "none";
-      dropdownToggle.src = "./assets/down.svg"
-      }
-
-    });
-
-    
-
-  </script>
+  <script src="./formfunctions.js"></script>
 </html>
