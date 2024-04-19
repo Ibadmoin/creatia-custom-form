@@ -192,6 +192,7 @@ text-transform: uppercase;
   padding: 6px 14px;
   margin-left: 10px;
   cursor: pointer;
+  width: 90%;
 }
 .search-results p:hover {
   border-radius: 6px;

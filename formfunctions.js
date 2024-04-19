@@ -1,7 +1,9 @@
-var inputFeild = document.getElementById("D_typeInput");
+var inputField = document.getElementById("D_typeInput");
 var typeResults = document.getElementById("D_type");
 var searchOptions = document.querySelectorAll("#D_type p");
 var dropdownToggle = document.getElementById("dropdownToggle");
+
+
 
 
 var phoneNumberInput = document.getElementById("phone_number");
@@ -9,7 +11,6 @@ var phoneNumberInput = document.getElementById("phone_number");
 phoneNumberInput.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/g, '');
 });
-
 
 
 
@@ -28,28 +29,31 @@ event.stopPropagation(); // Stop the click event from propagating to the documen
 
 
 
+inputField.addEventListener("keydown",function(e){
+  e.preventDefault();
+  
+  })
 
-// Attach click event listener to input field to handle opening and closing the dropdown
-inputFeild.addEventListener("click", function() {
-if (typeResults.style.display === "none" || typeResults.style.display === "") {
-typeResults.style.display = "inline-block";
-dropdownToggle.src = "./assets/up.svg";
-
+// Attach focus event listener to input field to handle opening and closing the dropdown
+inputField.addEventListener("focus", function(event) {
+  if (typeResults.style.display === "none" || typeResults.style.display === "") {
+      typeResults.style.display = "inline-block";
+      dropdownToggle.src = "./assets/up.svg";
   } else {
-typeResults.style.display = "none";
-dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-}
+      typeResults.style.display = "none";
+      dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+  }
+  event.stopPropagation();
+  console.log("dsadsad")
 });
 
-inputFeild.addEventListener("keydown",function(e){
-e.preventDefault();
 
-})
+
 
 
 searchOptions.forEach(function(option){
   option.addEventListener("click", function(){
-    inputFeild.value = this.textContent;
+    inputField.value = this.textContent;
     typeResults.style.display = "none";
     dropdownToggle.src = "./assets/down.svg"
   });
@@ -57,6 +61,26 @@ searchOptions.forEach(function(option){
 });
 
 
+// for touch devices input characters
+inputField.addEventListener("touchstart", function(event) {
+  event.preventDefault(); // Prevent the default touch behavior (e.g., showing the keyboard)
+  if (typeResults.style.display === "none" || typeResults.style.display === "") {
+      typeResults.style.display = "inline-block";
+      dropdownToggle.src = "./assets/up.svg";
+  } else {
+      typeResults.style.display = "none";
+      dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+  }
+});
+
+searchOptions.forEach(function(option) {
+  option.addEventListener("touchend", function(event) {
+      event.preventDefault(); // Prevent the default touch behavior
+      inputField.value = this.textContent;
+      typeResults.style.display = "none";
+      dropdownToggle.src = "./assets/down.svg";
+  });
+});
 
 
 //   file functionality
@@ -101,7 +125,7 @@ document.getElementById("file-upload").addEventListener("change", function(e) {
 // closing the dropdown when clicking outside the dropdown
 document.addEventListener("click", function(event){
 
-if(!inputFeild.contains(event.target) && !typeResults.contains(event.target)) {
+if(!inputField.contains(event.target) && !typeResults.contains(event.target)) {
   typeResults.style.display = "none";
   dropdownToggle.src = "./assets/down.svg"
   }
