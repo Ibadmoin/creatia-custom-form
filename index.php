@@ -15,18 +15,26 @@
         <div class="info-feild">
           <p class="if-head">Name <span>*</span></p>
           <input type="text" />
+          <div class="hinttext">Hint text</div>
+        
         </div>
         <div class="info-feild">
           <p class="if-head">Email <span>*</span></p>
           <input type="email" />
+          <div class="hinttext">Hint text</div>
+        
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
           <input type="text" />
+          <div class="hinttext">Hint text</div>
+        
         </div>
         <div class="info-feild">
           <p class="if-head">Phone <span>*</span></p>
           <input type="text" id="phone_number" maxlength="15" />
+          <div class="hinttext">Hint text</div>
+        
         </div>
 
         <div class="info-feild">
@@ -50,19 +58,22 @@
               <p>Text plus Image</p>
             </div>
           </div>
+          <div class="hinttext">Hint text</div>
+
         </div>
 
         <div class="info-feild">
           <p class="if-head">File Upload (Optional)</p>
           <div class="filewrapper">
             <div class="fileinnerwrapper">
-              <input type="file" id="file-upload" name="file-upload" multiple="multiple" />
+              
+              <div class="previewContainer" id="preContainer">
+                <input type="file" id="file-upload" name="file-upload" multiple="multiple" />
               <label for="file-upload" class="custom-file-upload" >
                 <div class="importwrapper">
                   <img src="./assets/plus.svg" class="importFile" alt="" />
                 </div>
               </label>
-              <div class="previewContainer" id="preContainer">
                 <!-- rendering through js -->
               <!-- <div class="preview-file">
                 
