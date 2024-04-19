@@ -207,6 +207,7 @@ text-transform: uppercase;
 .fileinnerwrapper {
   display: flex;
   gap: 8px 8px;
+  flex-wrap: wrap;
 }
 #file-upload {
   display: none;
@@ -228,10 +229,25 @@ text-transform: uppercase;
   width: 24px;
   height: 24px;
 }
-.previewContainer {
+.previewContainer{
+  width: 100%;
+  display: flex;
+  gap :8px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.preContainerimport{
+  display: flex;
+  gap: 8px;
+
+}
+
+.previewContainerinner {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  background-color: red;
 }
 
 .preview-file {
@@ -241,12 +257,28 @@ text-transform: uppercase;
   gap: 8px;
   align-items: center;
   border-radius: 6px;
-  background: #fcfaff;
+  background: var(--secondary-color);
+  position: relative;
 }
 .preview-file img {
   width: 85px;
   height: 85px;
   max-width: 100%;
+}
+
+.remove-file{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("./assets/plus.svg");
+  transform: rotate(45deg);
+  
+  cursor: pointer;
 }
 .filewrapper p {
   color: #332051;

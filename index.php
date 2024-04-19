@@ -67,17 +67,17 @@
           <div class="filewrapper">
             <div class="fileinnerwrapper">
               
-              <div class="previewContainer" id="preContainer">
+              <div class="previewContainer" >
                 <input type="file" id="file-upload" name="file-upload" multiple="multiple" />
               <label for="file-upload" class="custom-file-upload" >
                 <div class="importwrapper">
                   <img src="./assets/plus.svg" class="importFile" alt="" />
                 </div>
               </label>
-                <!-- rendering through js -->
-              <!-- <div class="preview-file">
+              <div id="preContainer" class="preContainerimport">
                 
-              </div> -->
+
+              </div>
               
               </div>
               
