@@ -1,85 +1,117 @@
-var inputField = document.getElementById("D_typeInput");
-var typeResults = document.getElementById("D_type");
-var searchOptions = document.querySelectorAll("#D_type p");
-var dropdownToggle = document.getElementById("dropdownToggle");
+// var inputField = document.getElementById("D_typeInput");
+// var typeResults = document.getElementById("D_type");
+// var searchOptions = document.querySelectorAll("#D_type p");
+// var dropdownToggle = document.getElementById("dropdownToggle");
 
-var phoneNumberInput = document.getElementById("phone_number");
+// var phoneNumberInput = document.getElementById("phone_number");
 
-phoneNumberInput &&
-  phoneNumberInput.addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, "");
+// phoneNumberInput &&
+//   phoneNumberInput.addEventListener("input", function () {
+//     this.value = this.value.replace(/[^0-9]/g, "");
+//   });
+
+// dropdownToggle &&
+//   dropdownToggle.addEventListener("click", function (event) {
+//     if (
+//       typeResults.style.display === "none" ||
+//       typeResults.style.display === ""
+//     ) {
+//       typeResults.style.display = "inline-block";
+//       dropdownToggle.src = "./assets/up.svg";
+//       alert("hogai link bhai"); // Change the arrow to up when opening
+//     } else {
+//       typeResults.style.display = "none";
+//       dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+//     }
+//     event.stopPropagation(); // Stop the click event from propagating to the document
+//   });
+
+// inputField &&
+//   inputField.addEventListener("keydown", function (e) {
+//     e.preventDefault();
+//   });
+
+// // Attach focus event listener to input field to handle opening and closing the dropdown
+// inputField &&
+//   inputField.addEventListener("focus", function (event) {
+//     if (
+//       typeResults.style.display === "none" ||
+//       typeResults.style.display === ""
+//     ) {
+//       typeResults.style.display = "inline-block";
+//       dropdownToggle.src = "./assets/up.svg";
+//     } else {
+//       typeResults.style.display = "none";
+//       dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+//     }
+//     event.stopPropagation();
+//     console.log("dsadsad");
+//   });
+
+// searchOptions.forEach(function (option) {
+//   option.addEventListener("click", function () {
+//     inputField.value = this.textContent;
+//     typeResults.style.display = "none";
+//     dropdownToggle.src = "./assets/down.svg";
+//   });
+// });
+
+// // for touch devices input characters
+// inputField &&
+//   inputField.addEventListener("touchstart", function (event) {
+//     event.preventDefault(); // Prevent the default touch behavior (e.g., showing the keyboard)
+//     if (
+//       typeResults.style.display === "none" ||
+//       typeResults.style.display === ""
+//     ) {
+//       typeResults.style.display = "inline-block";
+//       dropdownToggle.src = "./assets/up.svg";
+//     } else {
+//       typeResults.style.display = "none";
+//       dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
+//     }
+//   });
+
+// searchOptions.forEach(function (option) {
+//   option.addEventListener("touchend", function (event) {
+//     event.preventDefault(); // Prevent the default touch behavior
+//     inputField.value = this.textContent;
+//     typeResults.style.display = "none";
+//     dropdownToggle.src = "./assets/down.svg";
+//   });
+// });
+
+
+
+function initializeSelect(containerId, inputId) {
+  let selectContainer = document.getElementById(containerId);
+  let input = document.getElementById(inputId);
+  let options = selectContainer.querySelectorAll(".option");
+
+  selectContainer.querySelector(".select").onclick = () => {
+      selectContainer.classList.toggle("active");
+  };
+
+  options.forEach((option) => {
+      option.addEventListener("click", () => {
+          input.value = option.innerText;
+          selectContainer.classList.remove("active");
+          options.forEach((opt) => {
+              opt.classList.remove("selected");
+          });
+          option.classList.add("selected");
+      });
   });
 
-dropdownToggle &&
-  dropdownToggle.addEventListener("click", function (event) {
-    if (
-      typeResults.style.display === "none" ||
-      typeResults.style.display === ""
-    ) {
-      typeResults.style.display = "inline-block";
-      dropdownToggle.src = "./assets/up.svg";
-      alert("hogai link bhai"); // Change the arrow to up when opening
-    } else {
-      typeResults.style.display = "none";
-      dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-    }
-    event.stopPropagation(); // Stop the click event from propagating to the document
+  document.addEventListener("click", (event) => {
+      if (!selectContainer.contains(event.target)) {
+          selectContainer.classList.remove("active");
+      }
   });
+}
 
-inputField &&
-  inputField.addEventListener("keydown", function (e) {
-    e.preventDefault();
-  });
+initializeSelect("select-container1", "input1");
 
-// Attach focus event listener to input field to handle opening and closing the dropdown
-inputField &&
-  inputField.addEventListener("focus", function (event) {
-    if (
-      typeResults.style.display === "none" ||
-      typeResults.style.display === ""
-    ) {
-      typeResults.style.display = "inline-block";
-      dropdownToggle.src = "./assets/up.svg";
-    } else {
-      typeResults.style.display = "none";
-      dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-    }
-    event.stopPropagation();
-    console.log("dsadsad");
-  });
-
-searchOptions.forEach(function (option) {
-  option.addEventListener("click", function () {
-    inputField.value = this.textContent;
-    typeResults.style.display = "none";
-    dropdownToggle.src = "./assets/down.svg";
-  });
-});
-
-// for touch devices input characters
-inputField &&
-  inputField.addEventListener("touchstart", function (event) {
-    event.preventDefault(); // Prevent the default touch behavior (e.g., showing the keyboard)
-    if (
-      typeResults.style.display === "none" ||
-      typeResults.style.display === ""
-    ) {
-      typeResults.style.display = "inline-block";
-      dropdownToggle.src = "./assets/up.svg";
-    } else {
-      typeResults.style.display = "none";
-      dropdownToggle.src = "./assets/down.svg"; // Change the arrow to down when closing
-    }
-  });
-
-searchOptions.forEach(function (option) {
-  option.addEventListener("touchend", function (event) {
-    event.preventDefault(); // Prevent the default touch behavior
-    inputField.value = this.textContent;
-    typeResults.style.display = "none";
-    dropdownToggle.src = "./assets/down.svg";
-  });
-});
 
 //   file functionality
 

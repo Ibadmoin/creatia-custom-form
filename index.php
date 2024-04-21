@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <meta http-equiv="refresh" content="5" />
     <!-- autorefresh -->
     <title>Document</title>
     <link rel="stylesheet" href="design.css" />
@@ -37,25 +37,31 @@
 
         <div class="info-feild">
           <p class="if-head">Type of Design <span>*</span></p>
-          <div class="search-wrapper">
-            <input
-              type="text"
-              value=""
-              placeholder="Select Product Type"
-              id="D_typeInput"
-            />
-            <img
-              src="./assets/down.svg"
-              id="dropdownToggle"
-              class="arrow-icon"
-              alt=""
-            />
-            <div class="search-results" id="D_type">
-              <p>Typography</p>
-              <p>Image based Design</p>
-              <p>Text plus Image</p>
-            </div>
-          </div>
+          <div class="select-container" id="select-container1">
+    <div class="select">
+        <input type="text" id="input1" placeholder="select Type of Design" onfocus="this.blur();">
+    </div>
+    <div class="option-container">
+        <div class="option">
+            <label> Html </label>
+        </div>
+        <div class="option">
+            <label>CSS</label>
+        </div>
+        <div class="option">
+            <label>JavaScript</label>
+        </div>
+        <div class="option">
+            <label>Python</label>
+        </div>
+        <div class="option">
+            <label>PHP</label>
+        </div>
+        <div class="option">
+            <label>MySQL</label>
+        </div>
+    </div>
+</div>
           <div class="hinttext">Hint text</div>
         </div>
 
