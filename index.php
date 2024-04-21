@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="5">
+    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <!-- autorefresh -->
     <title>Document</title>
     <link rel="stylesheet" href="design.css" />
     <link rel="stylesheet" href="style.css" />
@@ -15,27 +16,23 @@
       <div class="info-wrapper">
         <div class="info-feild">
           <p class="if-head">Name <span>*</span></p>
-          <input type="text" />
+          <input type="text" placeholder="Enter Your Name" />
           <div class="hinttext">Hint text</div>
-        
         </div>
         <div class="info-feild">
           <p class="if-head">Email <span>*</span></p>
-          <input type="email" />
+          <input type="email"  placeholder="Enter Your Email"/>
           <div class="hinttext">Hint text</div>
-        
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
-          <input type="text" />
+          <input type="text" placeholder="Enter Your Address" />
           <div class="hinttext">Hint text</div>
-        
         </div>
         <div class="info-feild">
           <p class="if-head">Phone <span>*</span></p>
-          <input type="text" id="phone_number" maxlength="15" />
+          <input type="text" id="phone_number" maxlength="15" placeholder="Enter Your Phone Number" />
           <div class="hinttext">Hint text</div>
-        
         </div>
 
         <div class="info-feild">
@@ -60,28 +57,27 @@
             </div>
           </div>
           <div class="hinttext">Hint text</div>
-
         </div>
 
         <div class="info-feild">
           <p class="if-head">File Upload (Optional)</p>
           <div class="filewrapper">
             <div class="fileinnerwrapper">
-              
-              <div class="previewContainer" >
-                <input type="file" id="file-upload" name="file-upload" multiple="multiple" />
-              <label for="file-upload" class="custom-file-upload" >
-                <div class="importwrapper">
-                  <img src="./assets/plus.svg" class="importFile" alt="" />
+              <div class="previewContainer">
+                <input
+                  type="file"
+                  id="file-upload"
+                  name="file-upload"
+                />
+                <label for="file-upload" class="custom-file-upload">
+                  <div class="importwrapper " id="importbtn">
+                    <img src="./assets/plus.svg" class="importFile" id="importimg"  alt="" />
+                  </div>
+                </label>
+                <div id="preContainer" class="preContainerimport">
+                  <!-- js Populated file preview here -->
                 </div>
-              </label>
-              <div id="preContainer" class="preContainerimport">
-                
-
               </div>
-              
-              </div>
-              
             </div>
             <p>Max file Size: 2gb</p>
           </div>
@@ -117,6 +113,11 @@
       <!-- submit button here -->
       <button class="submitbtn">Submit</button>
     </form>
+
+
+
+  <script src="./formfunctions.js"></script>
+
   </body>
 
   <script>
@@ -183,5 +184,4 @@
       });
     });
   </script>
-  <script src="./formfunctions.js"></script>
 </html>

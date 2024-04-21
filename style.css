@@ -5,10 +5,13 @@
 
 :root {
   --secondary-color: #f6efff;
-  --text-color: #7b6d8b;
+  --placeholder-text-color: #7b6d8b;
+  --text-color:#32283D;
   --head-text-color: #261f2e;
   --secondary-text-color: #B3ABBC;
   --hover-color: red;
+  --disabled-color :#CCC7D2;
+  --outline-color : #a65efc;
 }
 
 body {
@@ -117,7 +120,7 @@ form {
   line-height: 25.888px; /* 161.8% */
 }
 .info-feild input:focus {
-  outline: none;
+  outline: var(--outline-color) 2px solid;
 }
 
 
@@ -147,11 +150,16 @@ text-transform: uppercase;
 }
 
 .search-wrapper input[type="text"] {
-  padding-right: 30px; /* Adjust according to the size of your arrow */
+  /* padding-right: 30px; Adjust according to the size of your arrow */
   width: 100%;
 }
+.search-wrapper input[type="text"]:focus{
+  outline: none;
+  
+
+}
 .search-wrapper input::placeholder {
-  color: #575757;
+  color: var(--placeholder-text-color);
 
   /* old typo/paragrph text */
   font-family: Outfit;
@@ -176,6 +184,9 @@ text-transform: uppercase;
   width: 100%;
   background-color: var(--secondary-color);
   display: none;
+  border-bottom: #01e29c 2px solid;
+  border-right: #01e29c 2px solid;
+  border-left: #01e29c 2px solid;
   
 }
 .search-results p {
@@ -189,7 +200,7 @@ text-transform: uppercase;
   line-height: normal;
   display: flex;
   align-items: flex-start;
-  padding: 6px 14px;
+  padding: 6px 10px;
   margin-left: 10px;
   cursor: pointer;
   width: 90%;
@@ -213,7 +224,6 @@ text-transform: uppercase;
   display: none;
 }
 .importwrapper {
-  background-color: #01e29c;
   width: 25px;
   height: 25px;
   display: flex;
@@ -225,6 +235,19 @@ text-transform: uppercase;
   padding: 30px;
 }
 
+.disabled {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  background: var(--disabled-color);
+  padding: 30px;
+  cursor: not-allowed;
+}
+
 .importFile {
   width: 24px;
   height: 24px;
@@ -234,7 +257,7 @@ text-transform: uppercase;
   display: flex;
   gap :8px;
   flex-wrap: wrap;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .preContainerimport{
@@ -277,7 +300,7 @@ text-transform: uppercase;
   background-repeat: no-repeat;
   background: url("./assets/plus.svg");
   transform: rotate(45deg);
-  
+  fill: #690707;
   cursor: pointer;
 }
 .filewrapper p {
