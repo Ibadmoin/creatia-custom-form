@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="5" />
+    <!-- <meta http-equiv="refresh" content="5" /> -->
     <!-- autorefresh -->
     <title>Document</title>
     <link rel="stylesheet" href="design.css" />
@@ -43,23 +43,15 @@
     </div>
     <div class="option-container">
         <div class="option">
-            <label> Html </label>
+            <label>Typography</label>
         </div>
         <div class="option">
-            <label>CSS</label>
+            <label>Image based Design</label>
         </div>
         <div class="option">
-            <label>JavaScript</label>
+            <label>Image Plus Text</label>
         </div>
-        <div class="option">
-            <label>Python</label>
-        </div>
-        <div class="option">
-            <label>PHP</label>
-        </div>
-        <div class="option">
-            <label>MySQL</label>
-        </div>
+        
     </div>
 </div>
           <div class="hinttext">Hint text</div>
@@ -82,6 +74,12 @@
                 </label>
                 <div id="preContainer" class="preContainerimport">
                   <!-- js Populated file preview here -->
+                  <!-- <div class="preview-file">
+                    <img src="./assets/plus.svg" alt="">
+                    <span  class="remove-file"></span>
+                    <span class="filename">File Name.png</span>
+                  </div> -->
+                  
                 </div>
               </div>
             </div>

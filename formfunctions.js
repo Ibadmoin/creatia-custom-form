@@ -161,6 +161,8 @@ function handleFileUploadChange() {
       previewElement.classList.add("preview-file");
       closeFileIcon = document.createElement("span");
       closeFileIcon.classList.add("remove-file");
+      fileNamePreview = document.createElement("span");
+      
       (function (previewElement) {
         closeFileIcon.addEventListener("click", function () {
           previewContainer.removeChild(previewElement);
@@ -170,9 +172,14 @@ function handleFileUploadChange() {
           updateFileNames();
         });
       })(previewElement);
+
+      fileNamePreview.textContent = file.name;
+      fileNamePreview.classList.add("filename");
+
+
       previewElement.setAttribute("data-file-name", file.name);
 
-      previewElement.append(closeFileIcon);
+      previewElement.append(closeFileIcon, fileNamePreview);
 
       if (file.type.startsWith("image/")) {
         var reader = new FileReader();

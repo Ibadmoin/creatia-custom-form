@@ -6,12 +6,12 @@
 :root {
   --secondary-color: #f6efff;
   --placeholder-text-color: #7b6d8b;
-  --text-color:#32283D;
+  --text-color: #32283d;
   --head-text-color: #261f2e;
-  --secondary-text-color: #B3ABBC;
+  --secondary-text-color: #b3abbc;
   --hover-color: red;
-  --disabled-color :#CCC7D2;
-  --outline-color : #a65efc;
+  --disabled-color: #ccc7d2;
+  --outline-color: #a65efc;
 }
 
 body {
@@ -63,18 +63,15 @@ form {
   display: flex;
   flex-wrap: wrap;
 
-
   justify-content: space-between;
   row-gap: 20px;
   column-gap: 10px;
-  
 }
 
 .info-feild {
   /* input container size */
   width: 48%;
   box-sizing: border-box;
-  
 }
 .if-head {
   align-self: stretch;
@@ -109,8 +106,6 @@ form {
   border: none;
   border-radius: 6px;
   color: var(--text-color);
-  
-
 
   /* old typo/paragrph text */
   font-family: Outfit;
@@ -123,20 +118,19 @@ form {
   outline: var(--outline-color) 2px solid;
 }
 
-
-.hinttext{
+.hinttext {
   color: var(--secondary-text-color);
   width: 90%;
   margin-top: 8px;
 
-/* Caption / Regular */
-font-family: Outfit;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; /* 150% */
-letter-spacing: 0.6px;
-text-transform: uppercase;
+  /* Caption / Regular */
+  font-family: Outfit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
 }
 /* select feild styling */
 /* search feild */
@@ -152,10 +146,8 @@ text-transform: uppercase;
   width: 100%;
   padding-right: 50px;
 }
-.search-wrapper input[type="text"]:focus{
+.search-wrapper input[type="text"]:focus {
   outline: none;
-  
-
 }
 .search-wrapper input::placeholder {
   color: var(--placeholder-text-color);
@@ -186,8 +178,6 @@ text-transform: uppercase;
   border-bottom: var(--outline-color) 2px solid;
   border-right: var(--outline-color) 2px solid;
   border-left: var(--outline-color) 2px solid;
-  
-  
 }
 .search-results p {
   color: #332051;
@@ -211,46 +201,47 @@ text-transform: uppercase;
   color: white;
 }
 
-
 /* Selectbox style */
 
 .select-container {
   position: relative;
   margin: 0 auto;
   width: 100%;
-border-radius : 6px;
-    background: #f6efff;
-
+  border-radius: 12px;
+  background: #f6efff;
 }
 
 .select-container .select {
   position: relative;
   background: #f6efff;
   height: 49px;
-border-radius : 6px;
-
-
+  border-radius: 12px;
 }
 
 .select-container .select::after {
   position: absolute;
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   top: 50%;
   right: 15px;
-  transform: translateY(-50%) rotate(45deg);
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
+  transform: rotate(45deg);
+  border-top: 2px solid black;
+  border-left: 2px solid black;
   cursor: pointer;
-  transition: border-color 0.4s;
+  transition: transform 0.4s;
 }
 
-.select-container.active .select::after {
+/* .select-container.active .select::after {
   border: none;
   border-left: 2px solid black;
   border-top: 2px solid black;
+} */
+
+.select-container.active .select::after {
+  transform: rotate(225deg); /* Rotate to 360 degrees */
 }
+
 .select-container .select input {
   position: relative;
   width: 100%;
@@ -262,22 +253,28 @@ border-radius : 6px;
   color: black;
   cursor: pointer;
 }
+
 .select-container .option-container {
   position: absolute;
-  background: #f6efff;
+  background: var(--secondary-color);
   width: 100%;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   z-index: 1;
   height: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
   transition: 0.4s;
+  max-height: 150px;
+  margin-top: -6px;
+  
 }
-
 
 .select-container.active .option-container {
   height: 240px;
+
 }
+
 
 .select-container .option-container::-webkit-scrollbar {
   width: 10px;
@@ -289,10 +286,7 @@ border-radius : 6px;
 
 .select-container .option-container .option {
   position: relative;
-  padding-left: 15px;
-  height: 24px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+
   /*     border-top: 1px solid rgba(0, 0, 0, 0.3); */
   cursor: pointer;
   display: flex;
@@ -301,36 +295,51 @@ border-radius : 6px;
   column-gap: 8px;
   margin-bottom: 8px;
   border-radius: 12px;
-  width: 90%;
-  margin-left: 5%;
+  width: 95%;
+  padding: 10px 0px 10px 5px;
+  height: 16px;
+  margin-left: 2%;
+}
+.select-container .option-container .option:first-child{
+  margin-top: 15px;
 }
 
 .select-container .option-container .option.selected {
   background: #a65efc;
   pointer-events: none;
-  
 }
 
 .select-container .option-container .option.selected label {
   color: white;
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+  width: 100%;
 }
-
-
 
 .select-container .option-container .option:hover {
   background: rgba(165, 94, 252, 0.2);
 
-  padding-left: 20px;
-color:white;
+  padding-left: 10px;
+  color: white;
 }
 /* 
 .select-container .option-container .option:hover label {
   color: white; 
 } */
 .select-container .option-container .option label {
-  font-size: 1.1rem;
   color: black;
   cursor: pointer;
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+  width: 100%;
 }
 
 /* Selectbox style */
@@ -341,8 +350,9 @@ color:white;
 }
 .fileinnerwrapper {
   display: flex;
-  gap: 8px 8px;
+  gap: 58px;
   flex-wrap: wrap;
+
 }
 #file-upload {
   display: none;
@@ -376,25 +386,38 @@ color:white;
   width: 24px;
   height: 24px;
 }
-.previewContainer{
+.previewContainer {
   width: 100%;
   display: flex;
-  gap :8px;
+  gap:8px;
   flex-wrap: wrap;
   /* padding: 10px; */
 }
 
-.preContainerimport{
+.preContainerimport {
   display: flex;
   gap: 8px;
-
 }
 
 .previewContainerinner {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  background-color: red;
+  position: relative;
+}
+.filename{
+  position: absolute;
+  bottom: -25px;
+  font-family:Outfit ;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-weight: 400;
+  text-align: center;
+  
+
 }
 
 .preview-file {
@@ -413,13 +436,13 @@ color:white;
   max-width: 100%;
 }
 
-.remove-file{
+.remove-file {
   width: 20px;
   height: 20px;
   position: absolute;
   top: 3px;
   right: 3px;
-  
+
   background-size: contain;
   background-repeat: no-repeat;
   background: url("./assets/plus.svg");
@@ -427,6 +450,8 @@ color:white;
   fill: #690707;
   cursor: pointer;
 }
+
+
 .filewrapper p {
   color: #332051;
 
@@ -438,6 +463,7 @@ color:white;
   line-height: normal;
   align-self: stretch;
   width: 100%;
+  margin-top: 40px;
 }
 
 .desciption-head {
