@@ -3,13 +3,6 @@
 // var searchOptions = document.querySelectorAll("#D_type p");
 // var dropdownToggle = document.getElementById("dropdownToggle");
 
-// var phoneNumberInput = document.getElementById("phone_number");
-
-// phoneNumberInput &&
-//   phoneNumberInput.addEventListener("input", function () {
-//     this.value = this.value.replace(/[^0-9]/g, "");
-//   });
-
 // dropdownToggle &&
 //   dropdownToggle.addEventListener("click", function (event) {
 //     if (
@@ -81,37 +74,32 @@
 //   });
 // });
 
-
-
 function initializeSelect(containerId, inputId) {
   let selectContainer = document.getElementById(containerId);
   let input = document.getElementById(inputId);
   let options = selectContainer.querySelectorAll(".option");
 
   selectContainer.querySelector(".select").onclick = () => {
-      selectContainer.classList.toggle("active");
+    selectContainer.classList.toggle("active");
   };
 
   options.forEach((option) => {
-      option.addEventListener("click", () => {
-          input.value = option.innerText;
-          selectContainer.classList.remove("active");
-          options.forEach((opt) => {
-              opt.classList.remove("selected");
-          });
-          option.classList.add("selected");
+    option.addEventListener("click", () => {
+      input.value = option.innerText;
+      selectContainer.classList.remove("active");
+      options.forEach((opt) => {
+        opt.classList.remove("selected");
       });
+      option.classList.add("selected");
+    });
   });
 
   document.addEventListener("click", (event) => {
-      if (!selectContainer.contains(event.target)) {
-          selectContainer.classList.remove("active");
-      }
+    if (!selectContainer.contains(event.target)) {
+      selectContainer.classList.remove("active");
+    }
   });
 }
-
-initializeSelect("select-container1", "input1");
-
 
 //   file functionality
 
@@ -162,7 +150,7 @@ function handleFileUploadChange() {
       closeFileIcon = document.createElement("span");
       closeFileIcon.classList.add("remove-file");
       fileNamePreview = document.createElement("span");
-      
+
       (function (previewElement) {
         closeFileIcon.addEventListener("click", function () {
           previewContainer.removeChild(previewElement);
@@ -175,7 +163,6 @@ function handleFileUploadChange() {
 
       fileNamePreview.textContent = file.name;
       fileNamePreview.classList.add("filename");
-
 
       previewElement.setAttribute("data-file-name", file.name);
 
@@ -208,17 +195,47 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("file-upload")
     .addEventListener("change", handleFileUploadChange);
+
+  var phoneNumberInput = document.getElementById("phone_number");
+
+  phoneNumberInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+  });
+
+  // selectBoxes Initializations
+
+  initializeSelect("select-container1", "input1");
+
+
+  // popup
+  var overlay = document.getElementById("popupOverlay");
+  var popupContent = document.getElementById("popupContent");
+
+   document.addEventListener("click", function(event) {
+    // Check if the clicked element is outside of the popupContent
+    if (!popupContent.contains(event.target) && event.target == overlay) {
+      overlay.classList.add("display-none");
+      popupContent.classList.add("display-none");
+    }
+  });
+
+  var pOkayBtn = document.getElementById("pOkayBtn");
+  pOkayBtn && pOkayBtn.addEventListener("click", function() {
+    overlay.classList.add("display-none");
+    popupContent.classList.add("display-none");
+  })
+
+  // Show the popup when needed (example)
+  var showPopupBtn = document.getElementById("showPopupBtn");
+  showPopupBtn && showPopupBtn.addEventListener("click", function() {
+    overlay.classList.remove("display-none");
+
+  });
+
 });
 
+
+
 // closing the dropdown when clicking outside the dropdown
-document.addEventListener("click", function (event) {
-  if (
-    !inputField.contains(event.target) &&
-    !typeResults.contains(event.target)
-  ) {
-    typeResults.style.display = "none";
-    dropdownToggle.src = "./assets/down.svg";
-  }
-});
 
 //File upload functionality

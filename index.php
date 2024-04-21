@@ -11,6 +11,26 @@
     <script src="./formfunctions.js"></script>
   </head>
   <body>
+
+  <!-- popup -->
+  <div class="overlay display-none" id="popupOverlay"></div>
+
+<div id="popupContent" class="popupContainer display-none">
+  <div class="popupContent">
+    <div class="popupIconWrapper">
+      <img src="./assets/error.svg" alt="">
+
+    </div>
+    <div class="popupHead">
+      <p>File Not Supported</p>
+    </div>
+    <div class="popupSubText"><p>Only jpg, png, svg formats are supported with max 1gb file size!</p></div>
+    <div class="popupActionBtnWrapper"><button class="PopupBtn" id="pOkayBtn">Okay</button></div>
+
+  </div>
+</div>
+  <!-- popup -->
+
     <form action="post">
       <p class="info-head">Basic <span>Information</span></p>
       <div class="info-wrapper">

@@ -267,14 +267,11 @@ form {
   transition: 0.4s;
   max-height: 150px;
   margin-top: -6px;
-  
 }
 
 .select-container.active .option-container {
   height: 240px;
-
 }
-
 
 .select-container .option-container::-webkit-scrollbar {
   width: 10px;
@@ -300,7 +297,7 @@ form {
   height: 16px;
   margin-left: 2%;
 }
-.select-container .option-container .option:first-child{
+.select-container .option-container .option:first-child {
   margin-top: 15px;
 }
 
@@ -352,7 +349,6 @@ form {
   display: flex;
   gap: 58px;
   flex-wrap: wrap;
-
 }
 #file-upload {
   display: none;
@@ -389,7 +385,7 @@ form {
 .previewContainer {
   width: 100%;
   display: flex;
-  gap:8px;
+  gap: 8px;
   flex-wrap: wrap;
   /* padding: 10px; */
 }
@@ -405,10 +401,10 @@ form {
   flex-wrap: wrap;
   position: relative;
 }
-.filename{
+.filename {
   position: absolute;
   bottom: -25px;
-  font-family:Outfit ;
+  font-family: Outfit;
   font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -416,8 +412,6 @@ form {
   width: 100%;
   font-weight: 400;
   text-align: center;
-  
-
 }
 
 .preview-file {
@@ -429,11 +423,11 @@ form {
   border-radius: 6px;
   background: var(--secondary-color);
   position: relative;
+  padding: 5px;
 }
 .preview-file img {
-  width: 85px;
-  height: 85px;
-  max-width: 100%;
+  width: 75px;
+  height: 75px;
 }
 
 .remove-file {
@@ -450,7 +444,6 @@ form {
   fill: #690707;
   cursor: pointer;
 }
-
 
 .filewrapper p {
   color: #332051;
@@ -592,3 +585,96 @@ form {
   background: #e91e7f;
 }
 /* add product styling ends here */
+
+/* popup styling */
+/* Semi-transparent background overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 2; 
+
+}
+
+/* Popup container */
+.popupContainer {
+  background-color: #fdf3f7; /* Adjust popup background color */
+  width: 260px; /* Adjust popup width */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Content inside the popup container */
+.popupContent {
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+}
+.popupIconWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.popupHead {
+  width: 100%;
+}
+.popupHead p {
+  color: #261f2e;
+  text-align: center;
+
+  /* H5 /  Bold */
+  font-family: Outfit;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33.6px; /* 120% */
+}
+.popupSubText {
+  width: 100%;
+  margin-top: -20px;
+}
+.popupSubText p {
+  color: #5a496e;
+  text-align: center;
+
+  /* Body / Regular */
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.popupActionBtnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.PopupBtn {
+  background-color: #a65efc;
+  color: var(--Colors-Text-White, #fff);
+
+  /* Subtitle / Medium */
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 150% */
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.display-none{
+  display: none;
+}
