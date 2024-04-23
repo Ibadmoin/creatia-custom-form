@@ -196,6 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("file-upload")
     .addEventListener("change", handleFileUploadChange);
 
+  var name = document.getElementById("fullName");
+  
+
   var phoneNumberInput = document.getElementById("phone_number");
 
   phoneNumberInput.addEventListener("input", function () {
@@ -233,6 +236,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+
+// validation functions
+function sanitizeInput(input) {
+
+  return input.replace(/<[^>]*>?/gm, '');
+}
+
 
 
 

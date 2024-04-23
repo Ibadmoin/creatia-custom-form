@@ -6,74 +6,85 @@
     <!-- <meta http-equiv="refresh" content="5" /> -->
     <!-- autorefresh -->
     <title>Document</title>
-    <link rel="stylesheet" href="design.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="./formfunctions.js"></script>
   </head>
   <body>
+    <!-- popup -->
+    <div class="overlay display-none" id="popupOverlay"></div>
 
-  <!-- popup -->
-  <div class="overlay display-none" id="popupOverlay"></div>
-
-<div id="popupContent" class="popupContainer display-none">
-  <div class="popupContent">
-    <div class="popupIconWrapper">
-      <img src="./assets/error.svg" alt="">
-
+    <div id="popupContent" class="popupContainer display-none">
+      <div class="popupContent">
+        <div class="popupIconWrapper">
+          <img src="./assets/error.svg" alt="" />
+        </div>
+        <div class="popupHead">
+          <p>File Not Supported</p>
+        </div>
+        <div class="popupSubText">
+          <p>
+            Only jpg, png, svg formats are supported with max 1gb file size!
+          </p>
+        </div>
+        <div class="popupActionBtnWrapper">
+          <button class="PopupBtn" id="pOkayBtn">Okay</button>
+        </div>
+      </div>
     </div>
-    <div class="popupHead">
-      <p>File Not Supported</p>
-    </div>
-    <div class="popupSubText"><p>Only jpg, png, svg formats are supported with max 1gb file size!</p></div>
-    <div class="popupActionBtnWrapper"><button class="PopupBtn" id="pOkayBtn">Okay</button></div>
-
-  </div>
-</div>
-  <!-- popup -->
+    <!-- popup -->
 
     <form action="post">
       <p class="info-head">Basic <span>Information</span></p>
       <div class="info-wrapper">
         <div class="info-feild">
           <p class="if-head">Name <span>*</span></p>
-          <input type="text" placeholder="Enter Your Name" />
+          <input type="text" placeholder="Enter Your Name"  id="fullName" maxlength="50"/>
           <div class="hinttext">Hint text</div>
         </div>
         <div class="info-feild">
           <p class="if-head">Email <span>*</span></p>
-          <input type="email"  placeholder="Enter Your Email"/>
+          <input type="email" placeholder="Enter Your Email" />
           <div class="hinttext">Hint text</div>
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
-          <input type="text" placeholder="Enter Your Address" />
+          <input type="text" placeholder="Enter Your Address" id="address" maxlength="255" />
           <div class="hinttext">Hint text</div>
         </div>
         <div class="info-feild">
           <p class="if-head">Phone <span>*</span></p>
-          <input type="text" id="phone_number" maxlength="15" placeholder="Enter Your Phone Number" />
+          <input
+            type="text"
+            id="phone_number"
+            maxlength="15"
+            placeholder="Enter Your Phone Number"
+          />
           <div class="hinttext">Hint text</div>
         </div>
 
         <div class="info-feild">
           <p class="if-head">Type of Design <span>*</span></p>
           <div class="select-container" id="select-container1">
-    <div class="select">
-        <input type="text" id="input1" placeholder="select Type of Design" onfocus="this.blur();">
-    </div>
-    <div class="option-container">
-        <div class="option">
-            <label>Typography</label>
-        </div>
-        <div class="option">
-            <label>Image based Design</label>
-        </div>
-        <div class="option">
-            <label>Image Plus Text</label>
-        </div>
-        
-    </div>
-</div>
+            <div class="select">
+              <input
+                type="text"
+                id="input1"
+                placeholder="select Type of Design"
+                onfocus="this.blur();"
+              />
+            </div>
+            <div class="option-container">
+              <div class="option">
+                <label>Text based Design</label>
+              </div>
+              <div class="option">
+                <label>Image based Design</label>
+              </div>
+              <div class="option">
+                <label>Image & Text based Desgin</label>
+              </div>
+            </div>
+          </div>
           <div class="hinttext">Hint text</div>
         </div>
 
@@ -82,14 +93,15 @@
           <div class="filewrapper">
             <div class="fileinnerwrapper">
               <div class="previewContainer">
-                <input
-                  type="file"
-                  id="file-upload"
-                  name="file-upload"
-                />
+                <input type="file" id="file-upload" name="file-upload" />
                 <label for="file-upload" class="custom-file-upload">
-                  <div class="importwrapper " id="importbtn">
-                    <img src="./assets/plus.svg" class="importFile" id="importimg"  alt="" />
+                  <div class="importwrapper" id="importbtn">
+                    <img
+                      src="./assets/plus.svg"
+                      class="importFile"
+                      id="importimg"
+                      alt=""
+                    />
                   </div>
                 </label>
                 <div id="preContainer" class="preContainerimport">
@@ -99,7 +111,6 @@
                     <span  class="remove-file"></span>
                     <span class="filename">File Name.png</span>
                   </div> -->
-                  
                 </div>
               </div>
             </div>
@@ -110,11 +121,37 @@
       <div class="product-detail-wrapper">
         <p class="info-head">Product <span>Details</span></p>
         <!-- add product end here -->
-        <div id="product-fields">
+        <div id="product-fields" >
+          
           <!-- Existing product fields go here -->
+          <div class="product-field">
+            <div class="product-previewContainer">
+              <div class="product-previewContainerInner">
+                <div class="Product-imageWrapper">
+                  <img src="./assets/frame.png" alt="">
+                </div>
+                <div class="product-detailsWrapper">
+                  <div class="productNameWrapper">
+                    <p>Men’s Classic Tee | Gildon 5000</p>
+                  </div>
+                  <div class="view-sizeGuideWrapper">
+                    <span><img src="./assets/sizeguideicon.svg" alt=""></span>
+                    <p>View Product Size Guide</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="productSelection-Wrapper"></div>
+
+
+
+          </div>
+          
+          <!-- working -->
         </div>
         <div class="addbtnwrapper">
-          <button type="button" id="add-product">Add Product</button>
+          <button type="button" class="themeBtn" id="add-product">Add Product</button>
         </div>
 
         <div id="myPopup" class="popup">
@@ -135,13 +172,10 @@
       ></textarea>
       <!-- description layout end here  -->
       <!-- submit button here -->
-      <button class="submitbtn">Submit</button>
+      <button class="submitbtn themeBtn">Submit</button>
     </form>
 
-
-
-  <script src="./formfunctions.js"></script>
-
+    <script src="./formfunctions.js"></script>
   </body>
 
   <script>
