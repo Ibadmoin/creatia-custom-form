@@ -38,7 +38,12 @@
       <div class="info-wrapper">
         <div class="info-feild">
           <p class="if-head">Name <span>*</span></p>
-          <input type="text" placeholder="Enter Your Name"  id="fullName" maxlength="50"/>
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            id="fullName"
+            maxlength="50"
+          />
           <div class="hinttext">Hint text</div>
         </div>
         <div class="info-feild">
@@ -48,7 +53,12 @@
         </div>
         <div class="info-feild">
           <p class="if-head">Address <span>*</span></p>
-          <input type="text" placeholder="Enter Your Address" id="address" maxlength="255" />
+          <input
+            type="text"
+            placeholder="Enter Your Address"
+            id="address"
+            maxlength="255"
+          />
           <div class="hinttext">Hint text</div>
         </div>
         <div class="info-feild">
@@ -121,37 +131,135 @@
       <div class="product-detail-wrapper">
         <p class="info-head">Product <span>Details</span></p>
         <!-- add product end here -->
-        <div id="product-fields" >
-          
+        <div id="product-fields">
           <!-- Existing product fields go here -->
           <div class="product-field">
             <div class="product-previewContainer">
               <div class="product-previewContainerInner">
                 <div class="Product-imageWrapper">
-                  <img src="./assets/frame.png" alt="">
+                  <img src="./assets/frame.png" alt="" />
                 </div>
                 <div class="product-detailsWrapper">
                   <div class="productNameWrapper">
                     <p>Men’s Classic Tee | Gildon 5000</p>
                   </div>
                   <div class="view-sizeGuideWrapper">
-                    <span><img src="./assets/sizeguideicon.svg" alt=""></span>
+                    <span><img src="./assets/sizeguideicon.svg" alt="" /></span>
                     <p>View Product Size Guide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="productSelection-Wrapper">
+              <div class="info-feild">
+                <p class="if-head">Product <span>*</span></p>
+                <div class="select-container" id="select-container-product">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products"
+                      placeholder="select Type of Design"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- product items -->
+              <div class="info-feild">
+                <p class="if-head">Product Type <span>*</span></p>
+                <div class="select-container" id="select-container-product-item">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products-item"
+                      placeholder="select Type of Design"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- product sizes -->
+              <div class="info-feild">
+                <p class="if-head">Product Size <span>*</span></p>
+                <div class="select-container" id="select-container-product-item">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products-item"
+                      placeholder="select Type of Design"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- product colors -->
+              <div class="info-feild">
+                <p class="if-head">Product Color <span>*</span></p>
+                <div class="select-container" id="select-container-product-item-color">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products-item-color"
+                      placeholder="select Type of Design"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
                   </div>
                 </div>
               </div>
 
             </div>
-            <div class="productSelection-Wrapper"></div>
-
-
-
           </div>
-          
+
           <!-- working -->
         </div>
         <div class="addbtnwrapper">
-          <button type="button" class="themeBtn" id="add-product">Add Product</button>
+          <button type="button" class="themeBtn" id="add-product">
+            Add Product
+          </button>
         </div>
 
         <div id="myPopup" class="popup">
@@ -178,68 +286,4 @@
     <script src="./formfunctions.js"></script>
   </body>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document
-        .getElementById("add-product")
-        .addEventListener("click", function () {
-          var productFields = document.getElementById("product-fields");
-          var newProductField = document.createElement("div");
-          newProductField.classList.add("product-field");
-          newProductField.innerHTML = `
-                    <label>Image:</label>
-                    <img src="placeholder_image.jpg" alt="Product Image">
-                    <p>Product Title: Sample Title</p>
-                    <button type="button" class="view-size-guide">View Size Guide</button>
-                    <label>Product:</label>
-                    <select class="product-select" name="product[]">
-                        <!-- Populate product options dynamically -->
-                    </select>
-                    <label>Product Type:</label>
-                    <select class="product-type-select" name="product_type[]">
-                        <!-- Populate product type options dynamically -->
-                    </select>
-                    <label>Product Size:</label>
-                    <input type="text" name="product_size[]" placeholder="Size">
-                    <label>Product Color:</label>
-                    <input type="text" name="product_color[]" placeholder="Color">
-                    <label>Product Quantity:</label>
-                    <input type="number" min="1" value="1" name="product_quantity[]" placeholder="Quantity">
-                    <button type="button" class="remove-product">Remove Product</button>
-                `;
-          productFields.appendChild(newProductField);
-        });
-
-      document.addEventListener("click", function (event) {
-        if (event.target && event.target.classList.contains("remove-product")) {
-          event.target.parentNode.remove();
-        }
-      });
-
-      // Get the button and the popup
-      var button = document.getElementsByClassName("view-size-guide")[0];
-      var popup = document.getElementById("myPopup");
-
-      // Function to toggle the display of the popup
-      function togglePopup() {
-        if (popup.style.display === "block") {
-          popup.style.display = "none";
-        } else {
-          popup.style.display = "block";
-        }
-      }
-
-      // Attach a click event listener to the button
-      button.addEventListener("click", function () {
-        togglePopup();
-      });
-
-      // Close the popup if user clicks outside of it
-      window.addEventListener("click", function (event) {
-        if (event.target == popup) {
-          togglePopup();
-        }
-      });
-    });
-  </script>
 </html>

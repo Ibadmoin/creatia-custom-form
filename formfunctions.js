@@ -79,8 +79,13 @@ function initializeSelect(containerId, inputId) {
   let input = document.getElementById(inputId);
   let options = selectContainer.querySelectorAll(".option");
 
+  console.log("Select Container:", selectContainer);
+  console.log("Input Field:", input);
+  console.log("Options:", options);
+
   selectContainer.querySelector(".select").onclick = () => {
     selectContainer.classList.toggle("active");
+    console.log("clicked")
   };
 
   options.forEach((option) => {
@@ -208,6 +213,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // selectBoxes Initializations
 
   initializeSelect("select-container1", "input1");
+  initializeSelect("select-container-product", "search-products");
+  initializeSelect("select-container-product-item", "search-products-item");
+  initializeSelect("select-container-product-item-color", "search-products-item-color");
+
 
 
   // popup
