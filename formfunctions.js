@@ -254,7 +254,20 @@ function sanitizeInput(input) {
 }
 
 
+// setColors preview function
 
+var colors = ["#00ff00", "#000000", "#0000ff"];
+
+function setColorPreview(){
+  var previewSpans = document.querySelectorAll('.color-preview');
+  for(var i = 0;i< previewSpans.length;i++) {
+    previewSpans[i].style.backgroundColor = colors[i];
+    console.log("color")
+  }
+}
+
+
+window.onload = setColorPreview;
 
 // closing the dropdown when clicking outside the dropdown
 

@@ -1,9 +1,14 @@
+<?php
+// Prevent caching
+header("Cache-Control: no-cache, must-revalidate");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <!-- <meta http-equiv="refresh" content="2" /> -->
     <!-- autorefresh -->
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
@@ -131,7 +136,7 @@
       <div class="product-detail-wrapper">
         <p class="info-head">Product <span>Details</span></p>
         <!-- add product end here -->
-        <div id="product-fields">
+        <div id="product-fields" >
           <!-- Existing product fields go here -->
           <div class="product-field">
             <div class="product-previewContainer">
@@ -158,7 +163,7 @@
                     <input
                       type="text"
                       id="search-products"
-                      placeholder="select Type of Design"
+                      placeholder="Select an Option"
                       onfocus="this.blur();"
                     />
                   </div>
@@ -183,7 +188,7 @@
                     <input
                       type="text"
                       id="search-products-item"
-                      placeholder="select Type of Design"
+                      placeholder="Select an Option"
                       onfocus="this.blur();"
                     />
                   </div>
@@ -203,54 +208,46 @@
               <!-- product sizes -->
               <div class="info-feild">
                 <p class="if-head">Product Size <span>*</span></p>
-                <div class="select-container" id="select-container-product-item">
+                <div class="size-selection-wrapper" >
                   <div class="select">
-                    <input
-                      type="text"
-                      id="search-products-item"
-                      placeholder="select Type of Design"
-                      onfocus="this.blur();"
-                    />
-                  </div>
-                  <div class="option-container">
-                    <div class="option">
-                      <label>Text based Design</label>
+                    <div class="option-size-container">
+                      <div class="size-box sizebox_active"><p>S</p></div>
+                      <div class="size-box"><p>M</p></div>
+                      <div class="size-box"><p>L</p></div>
+                      <div class="size-box"><p>XL</p></div>
+                      <div class="size-box"><p>L</p></div>
                     </div>
-                    <div class="option">
-                      <label>Image based Design</label>
-                    </div>
-                    <div class="option">
-                      <label>Image & Text based Desgin</label>
-                    </div>
-                  </div>
                 </div>
               </div>
-              <!-- product colors -->
-              <div class="info-feild">
-                <p class="if-head">Product Color <span>*</span></p>
-                <div class="select-container" id="select-container-product-item-color">
-                  <div class="select">
-                    <input
-                      type="text"
-                      id="search-products-item-color"
-                      placeholder="select Type of Design"
-                      onfocus="this.blur();"
-                    />
-                  </div>
-                  <div class="option-container">
-                    <div class="option">
-                      <label>Text based Design</label>
-                    </div>
-                    <div class="option">
-                      <label>Image based Design</label>
-                    </div>
-                    <div class="option">
-                      <label>Image & Text based Desgin</label>
-                    </div>
-                  </div>
+            </div>
+            <!-- product colors -->
+            <div class="info-feild">
+              <p class="if-head">Product Color <span>*</span></p>
+              <div class="select-container" id="select-container-product-item-color">
+                <div class="select">
+                  <input
+                    type="text"
+                    id="search-products-item-color"
+                    placeholder="Select an Option"
+                    onfocus="this.blur();"
+                  />
                 </div>
-              </div>
+                <div class="option-container  ">
+                  <div class="option coloroption">
+                    <label><span class="color-preview"></span><p>Green</p></label>
+                    
+                  </div>
+                  
+                  <div class="option coloroption">
+                  <label><span class="color-preview"></span><p>Black</p></label>
 
+                  </div>
+                  <div class="option coloroption">
+                  <label><span class="color-preview"></span><p>Blue</p></label>
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
