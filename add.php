@@ -24,25 +24,118 @@
                 var newProductField = document.createElement('div');
                 newProductField.classList.add('product-field');
                 newProductField.innerHTML = `
-                    <label>Image:</label>
-                    <img src="placeholder_image.jpg" alt="Product Image">
-                    <p>Product Title: Sample Title</p>
-                    <button type="button" class="view-size-guide">View Size Guide</button>
-                    <label>Product:</label>
-                    <select class="product-select" name="product[]">
-                        <!-- Populate product options dynamically -->
-                    </select>
-                    <label>Product Type:</label>
-                    <select class="product-type-select" name="product_type[]">
-                        <!-- Populate product type options dynamically -->
-                    </select>
-                    <label>Product Size:</label>
-                    <input type="text" name="product_size[]" placeholder="Size">
-                    <label>Product Color:</label>
-                    <input type="text" name="product_color[]" placeholder="Color">
-                    <label>Product Quantity:</label>
-                    <input type="number" min="1" value="1" name="product_quantity[]" placeholder="Quantity">
-                    <button type="button" class="remove-product">Remove Product</button>
+                
+            <div class="product-previewContainer">
+              <div class="product-previewContainerInner">
+                <div class="Product-imageWrapper">
+                  <img src="./assets/frame.png" alt="" />
+                </div>
+                <div class="product-detailsWrapper">
+                  <div class="productNameWrapper">
+                    <p>Men’s Classic Tee | Gildon 5000</p>
+                  </div>
+                  <div class="view-sizeGuideWrapper">
+                    <span><img src="./assets/sizeguideicon.svg" alt="" /></span>
+                    <p>View Product Size Guide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="productSelection-Wrapper">
+              <div class="info-feild">
+                <p class="if-head">Product <span>*</span></p>
+                <div class="select-container" id="select-container-product">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products"
+                      placeholder="Select an Option"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- product items -->
+              <div class="info-feild">
+                <p class="if-head">Product Type <span>*</span></p>
+                <div class="select-container" id="select-container-product-item">
+                  <div class="select">
+                    <input
+                      type="text"
+                      id="search-products-item"
+                      placeholder="Select an Option"
+                      onfocus="this.blur();"
+                    />
+                  </div>
+                  <div class="option-container">
+                    <div class="option">
+                      <label>Text based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image based Design</label>
+                    </div>
+                    <div class="option">
+                      <label>Image & Text based Desgin</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- product sizes -->
+              <div class="info-feild">
+                <p class="if-head">Product Size <span>*</span></p>
+                <div class="size-selection-wrapper" >
+                  <div class="select">
+                    <div class="option-size-container">
+                      <div class="size-box sizebox_active"><p>S</p></div>
+                      <div class="size-box"><p>M</p></div>
+                      <div class="size-box"><p>L</p></div>
+                      <div class="size-box"><p>XL</p></div>
+                      <div class="size-box"><p>L</p></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- product colors -->
+            <div class="info-feild">
+              <p class="if-head">Product Color <span>*</span></p>
+              <div class="select-container" id="select-container-product-item-color">
+                <div class="select">
+                  <input
+                    type="text"
+                    id="search-products-item-color"
+                    placeholder="Select an Option"
+                    onfocus="this.blur();"
+                  />
+                </div>
+                <div class="option-container  ">
+                  <div class="option coloroption">
+                    <label><span class="color-preview"></span><p>Green</p></label>
+                    
+                  </div>
+                  
+                  <div class="option coloroption">
+                  <label><span class="color-preview"></span><p>Black</p></label>
+
+                  </div>
+                  <div class="option coloroption">
+                  <label><span class="color-preview"></span><p>Blue</p></label>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
                 `;
                 productFields.appendChild(newProductField);
             });
