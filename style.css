@@ -788,6 +788,30 @@ form {
 
 }
 
+.productlastwrapper{
+  background-color: red;
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+}
+.quantityWrapper{
+  width: 200px;
+}
+
+.quantityInnerWrapper{
+  display: flex;
+  background-color: yellow;
+}
+.quantitydisplay{
+  width: 132px;
+  height: 40px;
+  background-color: var(--secondary-color);
+}
+.removebtnWrapper{
+  background-color: blue;
+  width:200px ;
+  height: 50px;
+}
 
 /* media query */
 @media (max-width: 768px) {
@@ -819,4 +843,15 @@ form {
   .productSelection-Wrapper .info-feild {
     width: 100%;
   }
+  .productlastwrapper{
+    flex-direction: column;
+    
+  }
+  .quantityWrapper{
+    width: 100%;
+  }
+  .removebtnWrapper{
+    width: 100%;
+  }
+  
 }

@@ -249,6 +249,19 @@ header("Cache-Control: no-cache, must-revalidate");
                 </div>
               </div>
             </div>
+            <div class="productlastwrapper">
+              <div class="quantityWrapper"><p class="if-head">Product Color <span>*</span></p>
+              <div class="quantityInnerWrapper">
+              <div class="quantityBTn">-</div>
+              <div class="quantitydisplay"></div>
+              <div class="quantityBTn">-</div>
+              </div>
+
+            
+            </div>
+              <div class="removebtnWrapper"></div>
+
+            </div>
           </div>
 
           <!-- working -->
