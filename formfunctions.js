@@ -255,7 +255,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   minusButtons.forEach(function(minusButton) {
       minusButton.addEventListener('click', function(e) {
-          console.log("neo");
           var input = this.nextElementSibling;
           var val = parseInt(input.value);
           if (val > 1) {
@@ -264,6 +263,13 @@ document.addEventListener("DOMContentLoaded", function () {
           }
       });
   });
+
+
+  // remove product functionaily
+  var removeProduct = document.querySelector(".removeProductBtn")
+  removeProduct.addEventListener("click",function(e){
+    e.preventDefault();
+  })
 
 });
 

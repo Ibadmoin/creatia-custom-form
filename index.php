@@ -263,8 +263,11 @@ header("Cache-Control: no-cache, must-revalidate");
 
     </div>
     
+    
   </div>
-  <div class="removebtnWrapper"></div>
+  <div class="removebtnWrapper">
+    <button class="removeProductBtn"><span><img src="./assets/delete.svg" alt=""></span>Remove Product</button>
+  </div>
              
             
 </div>
