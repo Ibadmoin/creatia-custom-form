@@ -789,28 +789,49 @@ form {
 }
 
 .productlastwrapper{
-  background-color: red;
   width: 100% !important;
   display: flex;
   justify-content: space-between;
+
 }
-.quantityWrapper{
-  width: 200px;
-}
+
+
+
 
 .quantityInnerWrapper{
   display: flex;
-  background-color: yellow;
+  gap: 8px;
+  justify-content:center ;
+  align-items: center;
+  width: max-content;
+
 }
-.quantitydisplay{
+.qty {
   width: 132px;
   height: 40px;
+  text-align: center;
   background-color: var(--secondary-color);
+  outline: none;
+  border: none;
+  border-radius: 6px;
 }
+.qtybtn{
+  background-color: #a65efc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+
+}
+input.qtyplus { width:40px; height:40px;}
+input.qtyminus { width:40px; height:40px;}
+
 .removebtnWrapper{
   background-color: blue;
   width:200px ;
   height: 50px;
+  margin-top: 50px;
+
 }
 
 /* media query */
@@ -843,15 +864,23 @@ form {
   .productSelection-Wrapper .info-feild {
     width: 100%;
   }
+  
+}
+@media (max-width:560px){
   .productlastwrapper{
     flex-direction: column;
+    gap: 24px;
     
   }
-  .quantityWrapper{
+  .quantityInnerWrapper{
     width: 100%;
+  }
+  .qty{
+    width: 80%;
   }
   .removebtnWrapper{
     width: 100%;
+    margin-top: 0;
   }
   
 }

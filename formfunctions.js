@@ -79,13 +79,9 @@ function initializeSelect(containerId, inputId) {
   let input = document.getElementById(inputId);
   let options = selectContainer.querySelectorAll(".option");
 
-  console.log("Select Container:", selectContainer);
-  console.log("Input Field:", input);
-  console.log("Options:", options);
 
   selectContainer.querySelector(".select").onclick = () => {
     selectContainer.classList.toggle("active");
-    console.log("clicked")
   };
 
   options.forEach((option) => {
@@ -242,6 +238,31 @@ document.addEventListener("DOMContentLoaded", function () {
   showPopupBtn && showPopupBtn.addEventListener("click", function() {
     overlay.classList.remove("display-none");
 
+  });
+
+  // quantity input functions
+  var plusButtons = document.querySelectorAll('.plus');
+  var minusButtons = document.querySelectorAll('.minus');
+
+  plusButtons.forEach(function(plusButton) {
+      plusButton.addEventListener('click', function(e) {
+          var input = this.previousElementSibling;
+          var val = parseInt(input.value);
+          input.value = val + 1;
+          input.dispatchEvent(new Event('change'));
+      });
+  });
+
+  minusButtons.forEach(function(minusButton) {
+      minusButton.addEventListener('click', function(e) {
+          console.log("neo");
+          var input = this.nextElementSibling;
+          var val = parseInt(input.value);
+          if (val > 1) {
+              input.value = val - 1;
+              input.dispatchEvent(new Event('change'));
+          }
+      });
   });
 
 });

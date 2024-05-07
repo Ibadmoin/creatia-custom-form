@@ -13,6 +13,8 @@ header("Cache-Control: no-cache, must-revalidate");
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="./formfunctions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </head>
   <body>
     <!-- popup -->
@@ -249,20 +251,24 @@ header("Cache-Control: no-cache, must-revalidate");
                 </div>
               </div>
             </div>
+
+
             <div class="productlastwrapper">
-              <div class="quantityWrapper"><p class="if-head">Product Color <span>*</span></p>
-              <div class="quantityInnerWrapper">
-              <div class="quantityBTn">-</div>
-              <div class="quantitydisplay"></div>
-              <div class="quantityBTn">-</div>
-              </div>
+    <div class="quantityWrapper">
+    <p class="if-head">Product Color <span>*</span></p>
+    <div class="quantityInnerWrapper">
+    <input type='button' value='-' class='qtyminus qtybtn minus' field='quantity' />
+  <input type='text' name='quantity' value='1' class='qty' />
+  <input type='button' value='+' class='qtyplus qtybtn plus' field='quantity' />
 
+    </div>
+    
+  </div>
+  <div class="removebtnWrapper"></div>
+             
             
-            </div>
-              <div class="removebtnWrapper"></div>
-
-            </div>
-          </div>
+</div>
+</div>
 
           <!-- working -->
         </div>
@@ -292,6 +298,10 @@ header("Cache-Control: no-cache, must-revalidate");
       <!-- submit button here -->
       <button class="submitbtn themeBtn">Submit</button>
     </form>
+
+    <!-- scripts -->
+
+
 
     <script src="./formfunctions.js"></script>
   </body>
